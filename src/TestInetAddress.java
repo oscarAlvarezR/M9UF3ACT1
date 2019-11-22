@@ -1,15 +1,20 @@
 import java.net.*;
+import java.util.Scanner;
 
 public class TestInetAddress {
 	
 	public static void main (String[] args) {
+		
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Introdueix la ip:");
+		String ipTeclado = teclado.nextLine();
 		InetAddress dir = null;
 		System.out.println("=====================================================");
 		System.out.println("SORTIDA PER A LOCALHOST");
 		
 		try {
 			//LOCALHOST
-			dir = InetAddress.getByName("localhost");
+			dir = InetAddress.getByName(ipTeclado);
 			provaTots(dir);
 			
 			//URL www.google.com
